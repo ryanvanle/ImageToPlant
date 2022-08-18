@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ImageToPlant</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+  <script src="index.js"></script>
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+  <section id="title"><h1>Image To Plant</h1></section>
+
+  <section>
+    <input type="button" id="loadFileXml" value="Upload Image" onclick="document.getElementById('file').click();" />
+    <input type="file" style="display:none;" id="file" name="file" accept="image/png, image/jpeg"/>
+    <button id="model-button">Confirm Image</button>
+    <hr>
+    <div id="image-div"></div>
+  </section>
+
+  <section id="results">
+    <section id="original">
+      <div>
+        <img src="img/test.jpg" alt="test">
+        <h2>Original Plant</h2>
+      </div>
+    </section>
+    <section id="plants">
+      <section>
+        <div>
+          <img src="img/test.jpg" alt="test">
+          <h2>Plant 1 This is a lot of text (99.1)</h2>
+        </div>
+        <div>
+          <img src="img/test.jpg" alt="test">
+          <h2>Plant 1 This is a lot of text (99.1)</h2>
+        </div>
+      </section>
+      <section>
+        <div>
+          <img src="img/test.jpg" alt="test">
+          <h2>Plant 1 This is a lot of text (99.1)</h2>
+        </div>
+        <div>
+          <img src="img/test.jpg" alt="test">
+          <h2>Plant 1 This is a lot of text (99.1)</h2>
+        </div>
+      </section>
+
+    </section>
+  </section>
+
+</body>
+</html>
