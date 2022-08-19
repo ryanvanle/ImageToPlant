@@ -60,6 +60,11 @@ hr {
   border-radius: 5%;
 }
 
+#image-div img {
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
 #plants {
   display: flex;
   flex-direction: column;
@@ -112,7 +117,6 @@ section {
 }
 
 #results {
-  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
@@ -125,3 +129,10 @@ section {
   align-items: center;
 }
 
+.flex {
+  display: flex;
+}
+
+.hidden {
+  display: none;
+}

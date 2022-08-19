@@ -31,8 +31,33 @@
       model = await tf.loadGraphModel("./model/model.json");
     }
 
-    function prediction() {
-      console.log(image);
+    async function prediction() {
+      let tensor = preprocessImage(image);
+      let predictions = await model.predict(tensor).data();
+      console.log(predictions);
+
+      let topFour = Array.from(predictions)
+        .map(function (p, i) {
+          return {
+            probability:p,
+            className: PLANT_SCIENTIFIC[i]
+          }
+        }).sort(function (a, b) {
+          return b.probability - a.probability;
+        }).slice(0, 100);
+
+      console.log(topFour);
+    }
+
+    function preprocessImage(image) {
+
+      let imageElement = gen("img")
+      imageElement.src = image;
+      let tensor = tf.browser.fromPixels(imageElement).resizeNearestNeighbor([224, 224]).toFloat();
+      let offset = tf.scalar(127.5);
+      let returnValue = tensor.sub(offset).div(offset).expandDims();
+
+      return returnValue;
     }
 
 
