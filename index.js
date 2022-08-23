@@ -72,7 +72,6 @@
 
       let originalImageSection = generateOriginalImageSection();
       let plantImageSection = generatePlantsSection(imageDivs, results);
-      let button = generateBackToUploadButton();
 
       let resultsPage = id("results");
 
@@ -135,6 +134,7 @@
       let plants = gen("section");
       plants.id = "plants"
 
+      // need to display probablity percentage
       let counter = 0;
       for (let i = 0; i < 2; i++) {
         let section = gen("section");
