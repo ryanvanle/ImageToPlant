@@ -62,6 +62,7 @@
           imageElement.src = "./img/plants/" + PLANT_IMAGE[string];
           imageElement.alt = results[i]['className']
         } else {
+          console.log(string);
           console.log("does not exist")
           break;
         }
@@ -111,7 +112,7 @@
       img.alt = "user's input image";
 
       let h2 = gen("h2");
-      h2.textContent = "Original Plant"
+      h2.textContent = "Original Plant";
 
       div.appendChild(img);
       div.appendChild(h2);
@@ -160,7 +161,9 @@
     function imageString(name) {
       let imageName = name;
       imageName = imageName.toLowerCase();
-      imageName = imageName.replace(" ", "-")
+      imageName = imageName.replace(/\s/g, "-");
+
+      console.log(imageName);
       return imageName;
     }
 
